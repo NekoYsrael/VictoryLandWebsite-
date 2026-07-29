@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>217 Building Project | Victory Land Corporation</title>
+<link rel="stylesheet" href="project217.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="Logos/Untitled design (7).png" alt="Victory Land Logo">
+    </div>
+
+    <!-- HAMBURGER MENU TOGGLE -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#" onclick="window.location.href='MainPage.html'; return false;">
+            Home
+        </a>
+        <a href="#" onclick="window.location.href='MainPage.html#projects'; return false;">
+            Projects
+        </a>
+    </div>
+</nav>
+
+<!-- PROJECT HERO -->
+<section class="project-hero reveal">
+    <img
+        src="pictures/217 LOUNGE ROOM.jpg"
+        class="project-main-image"
+        alt="217 Building Project">
+
+    <div class="project-title">
+        <h1>217 Building</h1>
+        <p>Comprehensive Building Enhancement and Upgrades</p>
+    </div>
+</section>
+
+<!-- PROJECT OVERVIEW -->
+<section class="project-content reveal">
+    <h2>Project Overview</h2>
+    <p>
+        Victory Land Corporation managed the comprehensive enhancement and upgrade works for the 217 Building. 
+        The project focused on modernizing interior spaces—including lounges and function rooms—improving building functionality, and ensuring high-quality architectural finishes. Through careful project management and execution, we successfully elevated the building's aesthetic and operational standards.
+    </p>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="project-details reveal">
+    <div class="detail-box">
+        <h3>Project Type</h3>
+        <p>Building Enhancement / Renovation</p>
+    </div>
+
+    <div class="detail-box">
+        <h3>Client</h3>
+        <p>217 Building Management</p>
+    </div>
+
+    <div class="detail-box">
+        <h3>Project Status</h3>
+        <p>Completed</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section reveal">
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="pictures/217 LOUNGE ROOM.jpg" alt="217 Building Lounge Room">
+        </div>
+        <div class="gallery-item">
+            <img src="pictures/217 FUNCTION ROOM 2.jpg" alt="217 Building Function Room">
+        </div>
+        <div class="gallery-item">
+            <img src="pictures/217 FUNCTION ROOM 2.jpg" alt="217 Building Function Room Alternative View">
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT HIGHLIGHTS -->
+<section class="project-content reveal">
+    <h2>Project Highlights</h2>
+    <ul>
+        <li>Interior space modernization and renovation</li>
+        <li>Upgrades to lounge areas and function rooms</li>
+        <li>High-quality architectural and aesthetic finishing</li>
+        <li>Integration of modern lighting and structural enhancements</li>
+        <li>Efficient project management and quality control</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
+</footer>
+
+<!-- JAVASCRIPT FOR MOBILE TOGGLE & SCROLL REVEALS -->
+<script>
+    /* =========================
+       MOBILE HAMBURGER TOGGLE
+    ========================= */
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("navLinks");
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
+                navLinks.classList.remove("active");
+            });
+        });
+    }
+
+    /* =========================
+       SCROLL REVEAL ANIMATIONS
+    ========================= */
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+</script>
+
+</body>
+</html>

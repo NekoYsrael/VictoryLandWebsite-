@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT Colleges Project | Victory Land Corporation</title>
+<link rel="stylesheet" href="projecticct.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="Logos/Untitled design (7).png" alt="Victory Land Logo">
+    </div>
+
+    <!-- HAMBURGER MENU TOGGLE -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#" onclick="window.location.href='MainPage.html'; return false;">
+            Home
+        </a>
+        <a href="#" onclick="window.location.href='MainPage.html#projects'; return false;">
+            Projects
+        </a>
+    </div>
+</nav>
+
+<!-- PROJECT HERO -->
+<section class="project-hero reveal">
+    <img
+        src="pictures/03_ICCT COGEO EXTERIOR.png"
+        class="project-main-image"
+        alt="ICCT Colleges Project">
+
+    <div class="project-title">
+        <h1>ICCT Colleges Project</h1>
+        <p>Facility Improvement, Construction, and Maintenance Works</p>
+    </div>
+</section>
+
+<!-- PROJECT OVERVIEW -->
+<section class="project-content reveal">
+    <h2>Project Overview</h2>
+    <p>
+        Victory Land Corporation completed various construction,
+        facility improvement, and maintenance works for ICCT Colleges.
+        The project focused on enhancing school facilities,
+        improving functionality, and creating a better learning
+        environment through proper engineering, architecture,
+        and project management.
+    </p>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="project-details reveal">
+    <div class="detail-box">
+        <h3>Project Type</h3>
+        <p>Construction / Facility Improvement</p>
+    </div>
+
+    <div class="detail-box">
+        <h3>Client</h3>
+        <p>ICCT Colleges Foundation Inc.</p>
+    </div>
+
+    <div class="detail-box">
+        <h3>Project Status</h3>
+        <p>Completed / Ongoing Works</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section reveal">
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="pictures/IB5 Cainta 1.png" alt="ICCT Colleges Cainta IB5 Building">
+        </div>
+        <div class="gallery-item">
+            <img src="pictures/01_ICCT COGEO EXTERIOR.png" alt="ICCT Colleges Cogeo Building">
+        </div>
+        <div class="gallery-item">
+            <img src="pictures/San mateo Ext 2.png" alt="ICCT Project Image 3">
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT HIGHLIGHTS -->
+<section class="project-content reveal">
+    <h2>Project Highlights</h2>
+    <ul>
+        <li>Facility improvement and upgrading works</li>
+        <li>Construction and finishing activities</li>
+        <li>Architectural and engineering coordination</li>
+        <li>Quality control and project management execution</li>
+        <li>Improvement of educational facilities</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
+</footer>
+
+<!-- JAVASCRIPT FOR MOBILE TOGGLE & SCROLL REVEALS -->
+<script>
+    /* =========================
+       MOBILE HAMBURGER TOGGLE
+    ========================= */
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("navLinks");
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
+                navLinks.classList.remove("active");
+            });
+        });
+    }
+
+    /* =========================
+       SCROLL REVEAL ANIMATIONS
+    ========================= */
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+</script>
+
+</body>
+</html>

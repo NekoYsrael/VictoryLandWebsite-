@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Land Corporation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="MainPage.css">
+</head>
+
+<body>
+   
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <img src="Logos/Untitled design (7).png" alt="Logo">
+        </div>
+
+        <!-- HAMBURGER MENU TOGGLE -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="search-bar">
+            <!-- Search bar with ID for JS targeting -->
+            <input type="text" id="searchInput" placeholder="Search sections or projects & press Enter...">
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image:url('pictures/ICCT_COGEO_(1280x720).png');"></div>
+            <div class="slide" style="background-image:url('pictures/MADRID EXTERIOR (2) Edited.png');"></div>
+            <div class="slide" style="background-image:url('pictures/217 LOUNGE ROOM.jpg');"></div>
+            <div class="slide" style="background-image:url('pictures/03_ICCT COGEO EXTERIOR.png');"></div>
+            <div class="slide" style="background-image:url('pictures/217 FUNCTION ROOM 2.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <img src="Logos/Untitled design (7).png" class="hero-logo" alt="Hero Logo">
+            <p>Building Excellence Through Engineering, Architecture, and Project Management</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+        <h2>About Us</h2>
+        <div class="about-wrapper">
+            <div class="about-text">
+                <p class="about-lead">
+                    <strong>Victory Land Corporation</strong> is a premier firm dedicated to delivering excellence in Civil Engineering, Architecture, Construction, and Project Management. 
+                </p>
+                <p>
+                    From meticulous planning to final structural execution, we bridge the gap between creative architectural design and rigorous engineering standards. Our team is committed to transforming visions into reality—whether constructing commercial facilities, upgrading educational institutions, or executing high-end residential improvements.
+                </p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <h4>✔ Technical Precision</h4>
+                        <p>Rigorous adherence to engineering and safety standards.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✔ End-to-End Management</h4>
+                        <p>Seamless coordination from concept to project turnover.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✔ Quality Craftsmanship</h4>
+                        <p>High-grade materials and premium architectural finishes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <!-- ICCT PROJECT -->
+            <div class="project-card" onclick="openModal(
+                'pictures/ICCT_COGEO_(1280x720).png',
+                'ICCT Colleges Project',
+                'Facility improvement and maintenance works.',
+                'icct'
+            )">
+                <img src="pictures/ICCT_COGEO_(1280x720).png" alt="ICCT Colleges">
+                <h3>ICCT Colleges</h3>
+                <p>Facility improvement and maintenance works.</p>
+            </div>
+
+            <!-- MADRID PROJECT -->
+            <div class="project-card" onclick="openModal(
+                'pictures/MADRID EXTERIOR (2) Edited.png',
+                'Madrid Residence',
+                'Residential improvement project.',
+                'madrid'
+            )">
+                <img src="pictures/MADRID EXTERIOR (2) Edited.png" alt="Madrid Residence">
+                <h3>Madrid Residence</h3>
+                <p>Residential improvement project.</p>
+            </div>
+
+            <!-- 217 PROJECT -->
+            <div class="project-card" onclick="openModal(
+                'pictures/217 LOUNGE ROOM.jpg',
+                '217 Building',
+                'Building enhancement and upgrades.',
+                'building217'
+            )">
+                <img src="pictures/217 LOUNGE ROOM.jpg" alt="217 Building">
+                <h3>217 Building</h3>
+                <p>Building enhancement and upgrades.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-left">
+                <p>We operate from 7:00 AM to 5:00 PM, Monday to Saturday.</p>
+                <!-- Formspree endpoint ready (replace YOUR_FORM_ID with your form ID) -->
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" id="submitBtn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-right">
+                <iframe
+                    src="https://www.google.com/maps?q=225A%20Wilson%20Street,%20San%20Juan%20City,%201502%20Metro%20Manila&output=embed"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Address: 225 Wilson Street, Greenhills, San Juan City</p>
+        <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" alt="Project Modal Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            
+            <button id="viewBtn" onclick="goToProject()">
+                View Project
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        /* =========================
+           HERO SLIDER
+        ========================= */
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function nextSlide() {
+            slides.forEach(slide => {
+                slide.classList.remove("active");
+            });
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }
+        setInterval(nextSlide, 4000);
+
+
+        /* =========================
+           PROJECT MODAL SYSTEM
+        ========================= */
+        let currentPage = "";
+
+        const projectPages = {
+            icct: "projecticct.html",
+            madrid: "projectmadrid.html",
+            building217: "project217.html"
+        };
+
+        function openModal(img, title, desc, project) {
+            document.getElementById("projectModal").style.display = "flex";
+            document.getElementById("modalImg").src = img;
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalDesc").innerText = desc;
+
+            currentPage = projectPages[project];
+        }
+
+        function closeModal() {
+            document.getElementById("projectModal").style.display = "none";
+        }
+
+        function goToProject() {
+            if (currentPage) {
+                window.location.href = currentPage;
+            } else {
+                alert("Project page not found!");
+            }
+        }
+
+        window.onclick = function (e) {
+            const modal = document.getElementById("projectModal");
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
+
+        /* =========================
+           GLOBAL UNIVERSAL SEARCH & REDIRECT
+        ========================= */
+        const searchInput = document.getElementById("searchInput");
+
+        const searchDestinations = {
+            "icct": "projecticct.html",
+            "icct colleges": "projecticct.html",
+            "madrid": "projectmadrid.html",
+            "madrid residence": "projectmadrid.html",
+            "217": "project217.html",
+            "building 217": "project217.html",
+            "217 building": "project217.html",
+            "contact": "#contact",
+            "contacts": "#contact",
+            "contact us": "#contact",
+            "about": "#about",
+            "about us": "#about",
+            "projects": "#projects",
+            "home": "#hero",
+            "hero": "#hero"
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener("keydown", function(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+
+                    if (searchDestinations[searchTerm]) {
+                        const destination = searchDestinations[searchTerm];
+                        if (destination.startsWith("#")) {
+                            const targetSection = document.querySelector(destination);
+                            if (targetSection) {
+                                targetSection.scrollIntoView({ behavior: "smooth" });
+                                searchInput.value = "";
+                            }
+                        } else {
+                            window.location.href = destination;
+                        }
+                    } else if (searchTerm !== "") {
+                        alert("Page or section not found!");
+                    }
+                }
+            });
+        }
+
+
+        /* =========================
+           MOBILE HAMBURGER TOGGLE
+        ========================= */
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+
+
+        /* =========================
+           CONTACT FORM LOADING STATE
+        ========================= */
+        const contactForm = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+
+        if (contactForm && submitBtn) {
+            contactForm.addEventListener("submit", function() {
+                submitBtn.innerText = "Sending...";
+                submitBtn.style.opacity = "0.7";
+                submitBtn.disabled = true;
+            });
+        }
+
+
+        /* =========================
+           SCROLL REVEAL ANIMATIONS
+        ========================= */
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
