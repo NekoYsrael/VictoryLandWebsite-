@@ -2,17 +2,28 @@
 <html lang="en">
 
 <head>
+    <head>
+    <!-- Your existing meta tags and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Victory Land Corporation</title>
+
+    <!-- Add your favicon logo here -->
+    <link rel="icon" type="image/png" href="Logos/Black White Modern Letter AG Logo (1).png">
+</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victory Land Corporation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Added Cormorant Garamond for the high-end serif header typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MainPage.css">
 </head>
 
 <body>
    
     <!-- NAVBAR -->
-    <nav>
+<nav>
+    <div class="nav-container">
         <div class="logo">
             <img src="Logos/Untitled design (7).png" alt="Logo">
         </div>
@@ -25,16 +36,17 @@
         </div>
 
         <div class="search-bar">
-            <!-- Search bar with ID for JS targeting -->
             <input type="text" id="searchInput" placeholder="Search sections or projects & press Enter...">
         </div>
+        
         <div class="nav-links" id="navLinks">
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- HERO -->
     <section class="hero" id="hero">
@@ -46,38 +58,59 @@
             <div class="slide" style="background-image:url('pictures/217 FUNCTION ROOM 2.jpg');"></div>
         </div>
         <div class="hero-content">
-            <img src="Logos/Untitled design (7).png" class="hero-logo" alt="Hero Logo">
-            <p>Building Excellence Through Engineering, Architecture, and Project Management</p>
+            <!-- Wrapped in an inner container to prevent text overspreading -->
+            <div class="hero-content-inner">
+                <img src="Logos/Untitled design (7).png" class="hero-logo" alt="Hero Logo">
+                <p>Building Excellence Through Engineering, Architecture, and Project Management</p>
+            </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="reveal">
-        <h2>About Us</h2>
-        <div class="about-wrapper">
-            <div class="about-text">
-                <p class="about-lead">
-                    <strong>Victory Land Corporation</strong> is a premier firm dedicated to delivering excellence in Civil Engineering, Architecture, Construction, and Project Management. 
-                </p>
-                <p>
-                    From meticulous planning to final structural execution, we bridge the gap between creative architectural design and rigorous engineering standards. Our team is committed to transforming visions into reality—whether constructing commercial facilities, upgrading educational institutions, or executing high-end residential improvements.
-                </p>
-                
-                <div class="about-features">
-                    <div class="feature-item">
-                        <h4>✔ Technical Precision</h4>
-                        <p>Rigorous adherence to engineering and safety standards.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✔ End-to-End Management</h4>
-                        <p>Seamless coordination from concept to project turnover.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✔ Quality Craftsmanship</h4>
-                        <p>High-grade materials and premium architectural finishes.</p>
-                    </div>
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="team-zigzag-section reveal">
+        <h3 class="team-zigzag-title">ABOUT US</h3>
+        <!-- COMPANY SUMMARY SECTION -->
+<section class="company-summary-section reveal">
+    <div class="summary-panel">
+        <h3 class="summary-header">Excellence in Engineering & Architecture</h3>
+        <p class="summary-text">
+            <strong>Victory Land Corporation</strong> specializes in civil engineering, architecture, and comprehensive project management, delivering precision-driven solutions from initial concept to final execution. By integrating innovative architectural design with rigorous engineering standards, we transform complex visions into structural masterpieces that stand the test of time.
+        </p>
+        <p class="summary-text" style="margin-bottom: 0;">
+            Proudly operating as a sister company of the <strong>ICCT Colleges Foundation Inc.</strong> and <strong>WSC Company</strong>, our enterprise is guided by visionary leadership under Founder and Chairman <strong>Dr. William S. Co</strong> and President <strong>Vivien Co Say</strong>. We combine institutional strength with elite industry expertise to shape tomorrow's modern infrastructure.
+        </p>
+    </div>
+</section>
+</div>
+        <div class="zigzag-container">
+            
+            <!-- Row 1: Picture Left, Words Right -->
+            <div class="zigzag-row">
+                <div class="zigzag-image" style="background-image: url('pictures/vlc1.jpg');"></div>
+                <div class="zigzag-content">
+                    <h4>VICTORY LAND CORPORATION</h4>
+                    <p>PROJECT MANAGEMENT TEAM</p>
+                </div> 
+            </div> 
+
+            <!-- Row 2: Words Left, Picture Right -->
+            <div class="zigzag-row reverse">
+                <div class="zigzag-image" style="background-image: url('pictures/vlc2.jpg');"></div>
+                <div class="zigzag-content">
+                    <h4>Mission</h4>
+                    <p>At Victoryland Corporation, we are committed to delivering high quality project management solutions through a dynamic team of architects and engineers. We specialize in the seamless execution of educational, medical, and residential developments including ICCT Colleges, clinics, laboratories, warehouses, and mid-rise condominiums. Our mission is to ensure every project reflects our values of integrity, innovation, and impact on time, within budget, and above expectations.</p>
                 </div>
             </div>
+
+            <!-- Row 3: Picture Left, Words Right -->
+            <div class="zigzag-row">
+                <div class="zigzag-image" style="background-image: url('pictures/vlc3.jpg');"></div>
+                <div class="zigzag-content">
+                    <h4>Vision</h4>
+                    <p>To be the trusted in-house design and development arm of the WSC Group of Companies, delivering high-quality, purpose-built structures that support institutional growth, community well-being, and long-term value.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -125,29 +158,52 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-        <h2>Contact Us</h2>
-        <div class="contact-wrapper">
-            <div class="contact-left">
-                <p>We operate from 7:00 AM to 5:00 PM, Monday to Saturday.</p>
-                <!-- Formspree endpoint ready (replace YOUR_FORM_ID with your form ID) -->
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" id="submitBtn">Send Message</button>
-                </form>
-            </div>
-            <div class="contact-right">
-                <iframe
-                    src="https://www.google.com/maps?q=225A%20Wilson%20Street,%20San%20Juan%20City,%201502%20Metro%20Manila&output=embed"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+   <!-- CONTACT -->
+<section id="contact" class="reveal">
+    <h2>Contact Us</h2>
+    <p class="contact-subtitle">Let’s shape tomorrow's landmarks together - connect with Victory Land Corporation today.</p>
+    <div class="contact-wrapper">
+        <div class="contact-left">
+            <p>We operate from 7:00 AM to 5:00 PM, Monday to Saturday.</p>
+            
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnjerrvj" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    <small id="emailError" class="error-msg" style="display: none; color: #d9534f; font-size: 0.8rem;">Please enter a valid email address.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                <p id="formSuccess" class="success-msg" style="display: none; color: #7B876D; margin-top: 15px; font-weight: 500;">Thank you! Your message has been sent successfully.</p>
+            </form>
+
+            <!-- Third-Party Contacts / Socials Prompt at the bottom -->
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e2e8f0; font-size: 0.85rem; color: #666; text-align: center;">
+                <span>For more info — visit us at: </span>
+                <a href="https://facebook.com/yourpage" target="_blank" style="color: #7B876D; text-decoration: none; font-weight: 500; margin-left: 5px;">Facebook</a> / 
+                <a href="https://linkedin.com/company/yourcompany" target="_blank" style="color: #7B876D; text-decoration: none; font-weight: 500;">LinkedIn</a>
             </div>
         </div>
-    </section>
+        <div class="contact-right">
+            <iframe
+                src="https://www.google.com/maps?q=225A%20Wilson%20Street,%20San%20Juan%20City,%201502%20Metro%20Manila&output=embed"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
 
     <!-- FOOTER -->
     <footer>
@@ -330,6 +386,77 @@
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+        document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contactForm");
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+    const formSuccess = document.getElementById("formSuccess");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (contactForm) {
+        // Automatic real-time email detection / validation as user types
+        emailInput.addEventListener("input", () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailInput.value.trim() === "") {
+                emailError.style.display = "none";
+                emailInput.style.borderColor = "#ccc";
+            } else if (!emailRegex.test(emailInput.value)) {
+                emailError.style.display = "block";
+                emailInput.style.borderColor = "#d9534f";
+            } else {
+                emailError.style.display = "none";
+                emailInput.style.borderColor = "#7B876D";
+            }
+        });
+
+        // Form submission handler
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Stop default page refresh
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.style.display = "block";
+                emailInput.style.borderColor = "#d9534f";
+                emailInput.focus();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'json'
+                    }
+                });
+
+                if (response.ok) {
+                    formSuccess.style.display = "block";
+                    contactForm.reset();
+                    emailInput.style.borderColor = "#ccc";
+                    
+                    setTimeout(() => {
+                        formSuccess.style.display = "none";
+                    }, 5000);
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                }
+            } catch (error) {
+                alert("Network error. Please check your connection and try again.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+            }
+        });
+    }
+});
+        
     </script>
 </body>
 </html>

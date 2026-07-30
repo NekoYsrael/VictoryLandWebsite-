@@ -2,152 +2,196 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madrid Residence Project | Victory Land Corporation</title>
-<link rel="stylesheet" href="projectmadrid.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrid Residence Project | Victory Land Corporation</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projectmadrid.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="logo">
-        <img src="Logos/Untitled design (7).png" alt="Victory Land Logo">
-    </div>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="MainPage.html"><img src="Logos/Untitled design (7).png" alt="Victory Land Logo"></a>
+            </div>
 
-    <!-- HAMBURGER MENU TOGGLE -->
-    <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+            <!-- HAMBURGER MENU TOGGLE -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <div class="nav-links" id="navLinks">
-        <a href="#" onclick="window.location.href='MainPage.html'; return false;">
-            Home
-        </a>
-        <a href="#" onclick="window.location.href='MainPage.html#projects'; return false;">
-            Projects
-        </a>
-    </div>
-</nav>
-
-<!-- PROJECT HERO -->
-<section class="project-hero reveal">
-    <img
-        src="pictures/MADRID EXTERIOR (2) Edited.png"
-        class="project-main-image"
-        alt="Madrid Residence Project">
-
-    <div class="project-title">
-        <h1>Madrid Residence</h1>
-        <p>Comprehensive Residential Improvement and Renovation</p>
-    </div>
-</section>
-
-<!-- PROJECT OVERVIEW -->
-<section class="project-content reveal">
-    <h2>Project Overview</h2>
-    <p>
-        Victory Land Corporation executed comprehensive residential improvement works for the Madrid Residence. 
-        The project focused on modernizing living spaces, elevating architectural aesthetics, and ensuring long-lasting structural integrity. Through meticulous engineering, high-quality material selection, and dedicated project management, we transformed the property into a premium, highly functional residential space tailored to the client's vision.
-    </p>
-</section>
-
-<!-- PROJECT DETAILS -->
-<section class="project-details reveal">
-    <div class="detail-box">
-        <h3>Project Type</h3>
-        <p>Residential Renovation / Construction</p>
-    </div>
-
-    <div class="detail-box">
-        <h3>Client</h3>
-        <p>Private Client</p>
-    </div>
-
-    <div class="detail-box">
-        <h3>Project Status</h3>
-        <p>Completed</p>
-    </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery-section reveal">
-    <h2>Project Gallery</h2>
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="pictures/MADRID EXTERIOR (2) Edited.png" alt="Madrid Residence Exterior View">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search sections or projects & press Enter...">
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="MainPage.html#hero">Home</a>
+                <a href="MainPage.html#about">About</a>
+                <a href="MainPage.html#projects">Projects</a>
+                <a href="MainPage.html#contact">Contact</a>
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="pictures/MADRID_INTERIOR_1.png" alt="Madrid Residence Interior View 1">
+    </nav>
+
+    <!-- PROJECT HERO -->
+    <section class="hero project-hero">
+        <div class="slide active" style="background-image: url('pictures/MADRID EXTERIOR (2) Edited.png');"></div>
+        <div class="project-title">
+            <h1 class="reveal">Madrid Residence</h1>
+            <p class="reveal">Comprehensive Residential Improvement and Renovation</p>
         </div>
-        <div class="gallery-item">
-            <img src="pictures/MADRID_INTERIOR_2.png" alt="Madrid Residence Interior View 2">
+    </section>
+
+    <!-- PROJECT OVERVIEW -->
+    <section class="project-content reveal">
+        <h2>Project Overview</h2>
+        <p>
+            Victory Land Corporation executed comprehensive residential improvement works for the Madrid Residence. 
+            The project focused on modernizing living spaces, elevating architectural aesthetics, and ensuring long-lasting structural integrity. Through meticulous engineering, high-quality material selection, and dedicated project management, we transformed the property into a premium, highly functional residential space tailored to the client's vision.
+        </p>
+    </section>
+
+    <!-- PROJECT DETAILS -->
+    <div class="project-details reveal">
+        <div class="detail-box">
+            <h3>Project Type</h3>
+            <p>Residential Renovation / Construction</p>
+        </div>
+
+        <div class="detail-box">
+            <h3>Client</h3>
+            <p>Private Client</p>
+        </div>
+
+        <div class="detail-box">
+            <h3>Project Status</h3>
+            <p>Design and Build Phase</p>
         </div>
     </div>
-</section>
 
-<!-- PROJECT HIGHLIGHTS -->
-<section class="project-content reveal">
-    <h2>Project Highlights</h2>
-    <ul>
-        <li>Interior and exterior residential renovation works</li>
-        <li>Architectural modernization and aesthetic upgrades</li>
-        <li>Structural enhancements and high-quality finishing</li>
-        <li>Space optimization and functionality improvements</li>
-        <li>Strict adherence to quality control and safety standards</li>
-    </ul>
-</section>
+    <!-- GALLERY -->
+    <section class="gallery-section reveal">
+        <h2>Project Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="pictures/Madrid facade.png" alt="Madrid Residence Exterior View">
+            </div>
+            <div class="gallery-item">
+                <img src="pictures/MADRID EXTERIOR (2) Edited.png" alt="Madrid Residence Interior View 1">
+            </div>
+            <div class="gallery-item">
+                <img src="pictures/Madrid.png" alt="Madrid Residence Interior View 2">
+            </div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
-</footer>
+    <!-- PROJECT HIGHLIGHTS -->
+    <section class="project-content reveal" style="padding-top: 0;">
+        <h2>Project Highlights</h2>
+        <ul>
+            <li>Interior and exterior residential renovation works</li>
+            <li>Architectural modernization and aesthetic upgrades</li>
+            <li>Structural enhancements and high-quality finishing</li>
+            <li>Space optimization and functionality improvements</li>
+            <li>Strict adherence to quality control and safety standards</li>
+        </ul>
 
-<!-- JAVASCRIPT FOR MOBILE TOGGLE & SCROLL REVEALS -->
-<script>
-    /* =========================
-       MOBILE HAMBURGER TOGGLE
-    ========================= */
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = document.getElementById("navLinks");
+        <div style="text-align: center;">
+            <a href="MainPage.html#projects" class="back-btn">Back to Projects</a>
+        </div>
+    </section>
 
-    if (mobileMenu && navLinks) {
-        mobileMenu.addEventListener("click", () => {
-            mobileMenu.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
+    </footer>
 
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                mobileMenu.classList.remove("active");
-                navLinks.classList.remove("active");
+    <!-- JAVASCRIPT FOR MOBILE TOGGLE, SEARCH & SCROLL REVEALS -->
+    <script>
+        /* =========================
+           MOBILE HAMBURGER TOGGLE
+        ========================= */
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+                navLinks.classList.toggle("active");
             });
+
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+
+        /* =========================
+           GLOBAL UNIVERSAL SEARCH & REDIRECT
+        ========================= */
+        const searchInput = document.getElementById("searchInput");
+
+        const searchDestinations = {
+            "icct": "projecticct.html",
+            "icct colleges": "projecticct.html",
+            "madrid": "projectmadrid.html",
+            "madrid residence": "projectmadrid.html",
+            "217": "project217.html",
+            "building 217": "project217.html",
+            "217 building": "project217.html",
+            "contact": "MainPage.html#contact",
+            "contacts": "MainPage.html#contact",
+            "contact us": "MainPage.html#contact",
+            "about": "MainPage.html#about",
+            "about us": "MainPage.html#about",
+            "projects": "MainPage.html#projects",
+            "home": "MainPage.html#hero",
+            "hero": "MainPage.html#hero"
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener("keydown", function(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+
+                    if (searchDestinations[searchTerm]) {
+                        window.location.href = searchDestinations[searchTerm];
+                    } else if (searchTerm !== "") {
+                        alert("Page or section not found!");
+                    }
+                }
+            });
+        }
+
+        /* =========================
+           SCROLL REVEAL ANIMATIONS
+        ========================= */
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
         });
-    }
 
-    /* =========================
-       SCROLL REVEAL ANIMATIONS
-    ========================= */
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
-            }
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
         });
-    }, {
-        threshold: 0.15
-    });
-
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
-</script>
+    </script>
 
 </body>
 </html>

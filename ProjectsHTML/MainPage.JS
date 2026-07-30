@@ -58,6 +58,83 @@ window.addEventListener("click", function (e) {
 
 
 /* =========================
+   HERO FULL SCREEN SLIDER (MAINPAGE)
+========================= */
+
+const heroSlides = document.querySelectorAll(".hero .slide");
+if (heroSlides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+        heroSlides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+        heroSlides[currentSlide].classList.add("active");
+    }, 5000); // Changes image every 5 seconds
+}
+
+
+/* =========================
+   MOBILE HAMBURGER MENU TOGGLE
+========================= */
+
+const mobileMenu = document.getElementById("mobile-menu");
+const navLinks = document.getElementById("navLinks");
+
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        navLinks.classList.toggle("active");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            navLinks.classList.remove("active");
+        });
+    });
+}
+
+
+/* =========================
+   GLOBAL UNIVERSAL SEARCH & REDIRECT
+========================= */
+
+const searchInput = document.getElementById("searchInput");
+
+const searchDestinations = {
+    "icct": "projecticct.html",
+    "icct colleges": "projecticct.html",
+    "madrid": "projectmadrid.html",
+    "madrid residence": "projectmadrid.html",
+    "217": "project217.html",
+    "building 217": "project217.html",
+    "217 building": "project217.html",
+    "contact": "MainPage.html#contact",
+    "contacts": "MainPage.html#contact",
+    "contact us": "MainPage.html#contact",
+    "about": "MainPage.html#about",
+    "about us": "MainPage.html#about",
+    "projects": "MainPage.html#projects",
+    "home": "MainPage.html#hero",
+    "hero": "MainPage.html#hero"
+};
+
+if (searchInput) {
+    searchInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            if (searchDestinations[searchTerm]) {
+                window.location.href = searchDestinations[searchTerm];
+            } else if (searchTerm !== "") {
+                alert("Page or section not found!");
+            }
+        }
+    });
+}
+
+
+/* =========================
    MINI CAROUSEL
 ========================= */
 
@@ -88,6 +165,7 @@ document.querySelectorAll(".Minicarousel").forEach(carousel => {
 /* =========================
    MODAL WINDOW
 ========================= */
+
 const modal = document.getElementById("ModalWindow");
 const btn = document.getElementById("ModalBtn");
 const span = document.querySelector(".closer");
@@ -166,6 +244,30 @@ function updateDropzoneContent(files) {
     } else {
         dropzone.innerHTML = '<b>Drag & drop</b> a file here or <b>click here</b> to select a file.';
     }
+}
+
+
+/* =========================
+   SCROLL REVEAL ANIMATIONS (GLOBAL INTERSECTION OBSERVER)
+========================= */
+
+const revealElements = document.querySelectorAll(".reveal, .team-zigzag-section");
+
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
 }
 
 
