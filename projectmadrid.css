@@ -58,7 +58,7 @@ nav {
    SEARCH BAR
 ========================= */
 
-.search-bar {  
+.search-bar {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -160,7 +160,7 @@ nav {
     height: calc(100vh - 75px);
     min-height: 500px;
     overflow: hidden;
-    margin-top: 75px; 
+    margin-top: 75px;
 }
 
 .hero .slide {
@@ -219,7 +219,7 @@ nav {
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 15px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .project-title p {
@@ -301,7 +301,7 @@ section {
     border-radius: 12px;
     padding: 25px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -353,7 +353,7 @@ section {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #eee;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .gallery-item img {
@@ -441,7 +441,7 @@ footer p {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
@@ -453,7 +453,7 @@ footer p {
     }
 
     .hero {
-        height: 500px; 
+        height: 500px;
         min-height: 500px;
     }
 
@@ -471,5 +471,24 @@ footer p {
 
     .gallery-section {
         padding: 30px 15px 70px;
+    }
+}
+
+/* Styles for phones */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Make images fit the screen */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Stack columns instead of placing them side-by-side */
+    .container {
+        flex-direction: column;
     }
 }

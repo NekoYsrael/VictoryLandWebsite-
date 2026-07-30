@@ -473,3 +473,21 @@ footer p {
         padding: 30px 15px 70px;
     }
 }
+/* Styles for phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  /* Make images fit the screen */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Stack columns instead of placing them side-by-side */
+  .container {
+    flex-direction: column;
+  }
+}
