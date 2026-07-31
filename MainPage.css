@@ -1,3 +1,7 @@
+/* =========================
+    RESET & BASE SETUP
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +24,13 @@ body {
     line-height: 1.6;
 }
 
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
 /* =========================
-   NAVBAR & CONTAINER
+    NAVBAR & CONTAINER
 ========================= */
 
 nav {
@@ -48,7 +57,7 @@ nav {
 }
 
 /* =========================
-   SEARCH BAR
+    SEARCH BAR
 ========================= */
 
 .search-bar {
@@ -109,7 +118,7 @@ nav {
 }
 
 /* =========================
-   HAMBURGER MWEHEHE
+    HAMBURGER TOGGLE
 ========================= */
 
 .menu-toggle {
@@ -144,7 +153,7 @@ nav {
 }
 
 /* =========================
-   HERO SLIDER (FLEXBOX FLUID LAYOUT)
+    HERO SLIDER (FLEXBOX FLUID LAYOUT)
 ========================= */
 
 .hero {
@@ -203,7 +212,7 @@ nav {
     z-index: 2;
 }
 
-/* HERO CONTENT (Powered by Flexbox alignment) */
+/* HERO CONTENT */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -237,7 +246,7 @@ nav {
 }
 
 /* =========================
-   SECTIONS
+    SECTIONS
 ========================= */
 
 section {
@@ -260,7 +269,7 @@ section {
 }
 
 /* =========================
-   PROJECTS
+    PROJECTS
 ========================= */
 
 #projects h2 {
@@ -309,265 +318,7 @@ section {
 }
 
 /* =========================
-   CONTACT
-========================= */
-
-#contact h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.3rem;
-    font-family: 'Cormorant Garamond', serif;
-    color: #2c3e50;
-}
-
-#contact .contact-wrapper {
-    display: flex;
-    gap: 25px;
-    margin-top: 30px;
-    align-items: stretch;
-}
-
-#contact .contact-left,
-#contact .contact-right {
-    flex: 1;
-    min-height: 520px;
-    background: #f8f8f8;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-}
-
-#contact .contact-left {
-    justify-content: center;
-}
-
-#contact .contact-left p {
-    color: #555;
-}
-
-#contact .contact-left form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-#contact input,
-#contact textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    font-size: 0.95rem;
-}
-
-#contact textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-#contact button {
-    padding: 12px;
-    border: none;
-    background: #7B876D;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-weight: 500;
-}
-
-#contact button:hover {
-    background: #5f6a56;
-}
-
-#contact .contact-right iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #7B876D;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-}
-
-/* =========================
-   MODAL SYSTEM 
-========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(10px);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    position: relative;
-    width: 85%;
-    max-width: 750px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(18px);
-    border-radius: 16px;
-    padding: 25px;
-    text-align: center;
-    animation: popIn 0.25s ease;
-}
-
-.modal-content img {
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.modal-content h2 {
-    color: #2f3e2f;
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #2f3e2f;
-    transition: 0.3s ease;
-}
-
-.close:hover {
-    color: #E5BA41;
-}
-
-@keyframes popIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* =========================
-   VIEW BUTTON
-========================= */
-
-#viewBtn {
-    border: none;
-    padding: 12px 30px;
-    background: #7B876D;
-    color: #fff;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 5px 15px rgba(123, 135, 109, 0.25);
-}
-
-#viewBtn:hover {
-    background: #E5BA41;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(229, 186, 65, 0.35);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-    nav {
-        padding: 0 20px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .search-bar {
-        display: none;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: rgba(123, 135, 109, 0.95);
-        backdrop-filter: blur(15px);
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 30px 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        max-height: 300px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-    }
-
-    .hero {
-        min-height: calc(85vh - 75px);
-        max-height: 500px;
-    }
-
-    .hero-logo {
-        width: 300px;
-    }
-
-    #contact .contact-wrapper {
-        flex-direction: column;
-    }
-
-    #contact .contact-left,
-    #contact .contact-right {
-        min-height: 350px;
-    }
-
-    section {
-        padding: 70px 15px;
-    }
-}
-
-/* =========================
-   TEAM ZIGZAG CONSISTENT LAYOUT
+    TEAM ZIGZAG CONSISTENT LAYOUT
 ========================= */
 
 .team-zigzag-section {
@@ -606,7 +357,6 @@ footer p {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-
     opacity: 0;
     transform: translateX(-60px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
@@ -667,44 +417,60 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 768px) {
+/* =========================
+    COMPANY SUMMARY / ABOUT PANEL
+========================= */
 
-    .zigzag-row,
-    .zigzag-row.reverse {
-        grid-template-columns: 1fr;
-        transform: translateY(40px);
-    }
+.company-summary-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-    .team-zigzag-section.active .zigzag-row,
-    .team-zigzag-section.active .zigzag-row.reverse {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.summary-panel {
+    background: linear-gradient(135deg, #f9fbf9 0%, #f2f5f2 100%);
+    border: 1px solid #d8dfd3;
+    border-radius: 4px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.04);
+    position: relative;
+}
 
-    .zigzag-row.reverse .zigzag-image {
-        order: 1;
-    }
+.summary-panel::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #7B876D;
+    border-right: 2px solid #7B876D;
+}
 
-    .zigzag-row.reverse .zigzag-content {
-        order: 2;
-    }
+.summary-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
-    .zigzag-image {
-        min-height: 220px;
-    }
+.summary-text {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
 
-    .zigzag-content {
-        padding: 25px;
-        text-align: center;
-    }
-
-    .zigzag-content h4 {
-        font-size: 1.4rem;
-    }
+.summary-text strong {
+    color: #2f3e2f;
+    font-weight: 600;
 }
 
 /* =========================
-   CONTACT SECTION (ARCHITECTURAL / CONSTRUCTION ELEGANCE)
+    CONTACT SECTION (ARCHITECTURAL / CONSTRUCTION ELEGANCE)
 ========================= */
 
 #contact {
@@ -724,7 +490,7 @@ footer p {
     z-index: 0;
 }
 
-#contact>* {
+#contact > * {
     position: relative;
     z-index: 1;
 }
@@ -847,82 +613,8 @@ footer p {
     border: 1px solid #cbd5e1;
 }
 
-@media (max-width: 768px) {
-    #contact .contact-wrapper {
-        flex-direction: column;
-    }
-
-    #contact .contact-left,
-    #contact .contact-right {
-        min-height: 380px;
-        padding: 20px;
-    }
-}
-
 /* =========================
-   COMPANY SUMMARY / ABOUT ARCHITECTURAL PANEL
-========================= */
-
-.company-summary-section {
-    position: relative;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.summary-panel {
-    background: linear-gradient(135deg, #f9fbf9 0%, #f2f5f2 100%);
-    border: 1px solid #d8dfd3;
-    border-radius: 4px;
-    padding: 40px 50px;
-    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.04);
-    position: relative;
-}
-
-.summary-panel::after {
-    content: "";
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid #7B876D;
-    border-right: 2px solid #7B876D;
-}
-
-.summary-header {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.summary-text {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.summary-text strong {
-    color: #2f3e2f;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .summary-panel {
-        padding: 30px 20px;
-    }
-
-    .summary-header {
-        font-size: 1.5rem;
-    }
-}
-
-/* =========================
-   CONTACT US SECTION STYLING
+    CONTACT US ALTERNATE SECTION STYLING
 ========================= */
 
 .contact-section {
@@ -940,7 +632,7 @@ footer p {
     margin-bottom: 10px;
 }
 
-.contact-container>p {
+.contact-container > p {
     text-align: center;
     color: #666;
     margin-bottom: 40px;
@@ -1026,18 +718,385 @@ footer p {
     box-shadow: none;
 }
 
+/* =========================
+    COMPACT PROJECT MODAL SYSTEM 
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(30, 40, 30, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border: 1px solid #d8dfd3;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 25px 50px -12px rgba(44, 62, 80, 0.25);
+    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Architectural top-right corner accent */
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #7B876D;
+    border-right: 2px solid #7B876D;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Clean, non-overlapping close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #7B876D;
+    background: #f2f5f2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close:hover {
+    background: #E5BA41;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+    VIEW BUTTON
+========================= */
+
+#viewBtn {
+    border: none;
+    padding: 11px 22px;
+    background: #7B876D;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#viewBtn:hover {
+    background: #E5BA41;
+    transform: translateY(-2px);
+}
+
+/* =========================
+    FOOTER
+========================= */
+
+footer {
+    background: #7B876D;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* =========================
+    MOBILE RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-        padding: 10px;
+    nav {
+        padding: 0 20px;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    .menu-toggle {
+        display: flex;
     }
 
-    .container {
+    .search-bar {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: rgba(123, 135, 109, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: calc(85vh - 75px);
+        max-height: 500px;
+    }
+
+    .hero-logo {
+        width: 300px;
+    }
+
+    .zigzag-row,
+    .zigzag-row.reverse {
+        grid-template-columns: 1fr;
+        transform: translateY(40px);
+    }
+
+    .team-zigzag-section.active .zigzag-row,
+    .team-zigzag-section.active .zigzag-row.reverse {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .zigzag-row.reverse .zigzag-image {
+        order: 1;
+    }
+
+    .zigzag-row.reverse .zigzag-content {
+        order: 2;
+    }
+
+    .zigzag-image {
+        min-height: 220px;
+    }
+
+    .zigzag-content {
+        padding: 25px;
+        text-align: center;
+    }
+
+    .zigzag-content h4 {
+        font-size: 1.4rem;
+    }
+
+    #contact .contact-wrapper {
         flex-direction: column;
     }
+
+    #contact .contact-left,
+    #contact .contact-right {
+        min-height: 380px;
+        padding: 20px;
+    }
+
+    section {
+        padding: 70px 15px;
+    }
+
+    body {
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .summary-panel {
+        padding: 30px 20px;
+    }
+
+    .summary-header {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+/* =========================
+    COMPACT PROJECT MODAL SYSTEM (CENTERED CONTENT & BUTTON)
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(30, 40, 30, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border: 1px solid #d8dfd3;
+    border-radius: 16px;
+    padding: 30px;
+    /* Changed text alignment to center */
+    text-align: center; 
+    box-shadow: 0 25px 50px -12px rgba(44, 62, 80, 0.25);
+    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Architectural top-right corner accent */
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #7B876D;
+    border-right: 2px solid #7B876D;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Clean, non-overlapping close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #7B876D;
+    background: #f2f5f2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close:hover {
+    background: #E5BA41;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+    VIEW BUTTON (CENTERED)
+========================= */
+
+#viewBtn {
+    border: none;
+    padding: 11px 22px;
+    background: #7B876D;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    /* Added to allow proper centering inside a text-align: center container */
+    display: inline-block; 
+    margin: 0 auto;
+}
+
+#viewBtn:hover {
+    background: #E5BA41;
+    transform: translateY(-2px);
 }

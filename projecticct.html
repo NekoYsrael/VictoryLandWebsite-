@@ -79,17 +79,67 @@
     <section class="gallery-section reveal">
         <h2>Project Gallery</h2>
         <div class="gallery">
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal(
+                'pictures/IB5 Cainta 1.png',
+                'ICCT Colleges Cainta IB5 Campus Building',
+                'Detailed view of the Cainta IB5 campus facility upgrade and modern structuring.',
+                'icct'
+            )">
                 <img src="pictures/IB5 Cainta 1.png" alt="ICCT Colleges Cainta IB5 Building">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal(
+                'pictures/01_ICCT COGEO EXTERIOR.png',
+                'ICCT Colleges Cogeo Campus',
+                'Exterior development, structural enhancement, and finishing works at Cogeo branch.',
+                'icct'
+            )">
                 <img src="pictures/01_ICCT COGEO EXTERIOR.png" alt="ICCT Colleges Cogeo Building">
             </div>
-            <div class="gallery-item">
-                <img src="pictures/San mateo Ext 2.png" alt="ICCT Project Image 3">
+            <div class="gallery-item" onclick="openModal(
+                'pictures/San mateo Ext 2.png',
+                'ICCT Colleges San Mateo Campus',
+                'Facility improvement and developmental expansion for San Mateo branch.',
+                'icct'
+            )">
+                <img src="pictures/San mateo Ext 2.png" alt="ICCT SanMateo">
+            </div>
+            <div class="gallery-item" onclick="openModal(
+                'pictures/Gemini_Generated_Image_pofkuepofkuepofk.png',
+                'ICCT Colleges Angono Campus',
+                'Upgrading structural layouts and optimizing learning spaces.',
+                'icct'
+            )">
+                <img src="pictures/Gemini_Generated_Image_pofkuepofkuepofk.png" alt="ICCT Angono">
+            </div>
+            <div class="gallery-item" onclick="openModal(
+                'pictures/PERSPECTIVE A.png',
+                'ICCT Colleges Binangonan Campus',
+                'Architectural planning and structural perspective execution.',
+                'icct'
+            )">
+                <img src="pictures/PERSPECTIVE A.png" alt="ICCT Binangonan">
+            </div>
+            <div class="gallery-item" onclick="openModal(
+                'pictures/Untitled design (8).png',
+                'ICCT Colleges Antipolo Campus',
+                'Comprehensive maintenance and developmental work implementation.',
+                'icct'
+            )">
+                <img src="pictures/Untitled design (8).png" alt="ICCT Antipolo">
             </div>
         </div>
     </section>
+
+    <!-- COMPACT PROJECT MODAL CONTAINER -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Project Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <button id="viewBtn" onclick="goToProject()">View Project Details</button>
+        </div>
+    </div>
 
     <!-- PROJECT HIGHLIGHTS -->
     <section class="project-content reveal" style="padding-top: 0;">
@@ -112,7 +162,7 @@
         <p>© 2026 Victory Land Corporation | All Rights Reserved</p>
     </footer>
 
-    <!-- JAVASCRIPT FOR MOBILE TOGGLE, SEARCH & SCROLL REVEALS -->
+    <!-- JAVASCRIPT FOR MOBILE TOGGLE, SEARCH, SCROLL REVEALS & MODALS -->
     <script>
         /* =========================
             MOBILE HAMBURGER TOGGLE
@@ -191,6 +241,48 @@
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+
+        /* =========================
+            PROJECT MODAL SYSTEM
+        ========================= */
+        let currentPage = "";
+
+        const projectPages = {
+            icct: "projecticct.html",
+            madrid: "projectmadrid.html",
+            building217: "project217.html"
+        };
+
+        function openModal(img, title, desc, project) {
+            const modal = document.getElementById("projectModal");
+            document.getElementById("modalImg").src = img;
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalDesc").innerText = desc;
+
+            currentPage = projectPages[project] || "";
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("projectModal");
+            modal.style.display = "none";
+        }
+
+        function goToProject() {
+            if (currentPage) {
+                window.location.href = currentPage;
+            } else {
+                alert("Project page not found!");
+            }
+        }
+
+       
+        window.onclick = function (e) {
+            const modal = document.getElementById("projectModal");
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
     </script>
 
 </body>

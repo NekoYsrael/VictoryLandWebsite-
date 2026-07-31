@@ -1,5 +1,5 @@
 /* =========================
-   RESET & STICKY FOOTER SETUP
+    RESET & STICKY FOOTER FIX
 ========================= */
 
 * {
@@ -17,7 +17,7 @@ html {
     overflow-x: hidden;
 }
 
-/* BODY - Configured as Flexbox column for sticky footer behavior across zoom levels */
+/* Transform body into a vertical flex container to lock footer at bottom when screen is tall */
 body {
     width: 100%;
     min-height: 100vh;
@@ -36,7 +36,7 @@ img, video, iframe {
 }
 
 /* =========================
-   NAVBAR & CONTAINER
+    NAVBAR & CONTAINER
 ========================= */
 
 nav {
@@ -64,7 +64,7 @@ nav {
 }
 
 /* =========================
-   SEARCH BAR
+    SEARCH BAR
 ========================= */
 
 .search-bar {  
@@ -128,7 +128,7 @@ nav {
 }
 
 /* =========================
-   HAMBURGER TOGGLE
+    HAMBURGER TOGGLE
 ========================= */
 
 .menu-toggle {
@@ -163,7 +163,7 @@ nav {
 }
 
 /* =========================
-   PROJECT HERO (FULL SCREEN SLIDER STYLE MATCH)
+    PROJECT HERO (FULL SCREEN SLIDER STYLE MATCH)
 ========================= */
 
 .hero {
@@ -243,7 +243,7 @@ nav {
 }
 
 /* =========================
-   SECTIONS & SPACING
+    SECTIONS & SPACING
 ========================= */
 
 section {
@@ -266,7 +266,7 @@ section {
 }
 
 /* =========================
-   PROJECT CONTENT & HIGHLIGHTS
+    PROJECT CONTENT & HIGHLIGHTS
 ========================= */
 
 .project-content h2 {
@@ -295,7 +295,7 @@ section {
 }
 
 /* =========================
-   DETAILS GRID
+    DETAILS GRID
 ========================= */
 
 .project-details {
@@ -337,7 +337,7 @@ section {
 }
 
 /* =========================
-   GALLERY SECTION
+    GALLERY SECTION
 ========================= */
 
 .gallery-section {
@@ -368,6 +368,7 @@ section {
     overflow: hidden;
     border: 1px solid #eee;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -382,7 +383,7 @@ section {
 }
 
 /* =========================
-   BACK BUTTON
+    BACK BUTTON
 ========================= */
 
 .back-btn {
@@ -407,7 +408,7 @@ section {
 }
 
 /* =========================
-   FOOTER (STICKY FIX APPLIED)
+    FOOTER (STICKY BOTTOM FIX)
 ========================= */
 
 footer {
@@ -425,7 +426,127 @@ footer p {
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+    COMPACT PROJECT MODAL SYSTEM 
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(30, 40, 30, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 620px; /* Compact width matching main section modal layout */
+    background: #ffffff;
+    border: 1px solid #d8dfd3;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 25px 50px -12px rgba(44, 62, 80, 0.25);
+    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Architectural top-right corner accent */
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #7B876D;
+    border-right: 2px solid #7B876D;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px; /* Controlled image height */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* View Project Button inside modal */
+#viewBtn {
+    background: #7B876D;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#viewBtn:hover {
+    background: #E5BA41;
+    transform: translateY(-2px);
+}
+
+/* Clean, non-overlapping close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #7B876D;
+    background: #f2f5f2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close:hover {
+    background: #E5BA41;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+    MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
@@ -494,4 +615,135 @@ footer p {
     .project-details {
         grid-template-columns: 1fr;
     }
+
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+/* =========================
+    COMPACT PROJECT MODAL SYSTEM (CENTERED CONTENT & BUTTON)
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(30, 40, 30, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border: 1px solid #d8dfd3;
+    border-radius: 16px;
+    padding: 30px;
+    /* Changed text alignment to center */
+    text-align: center; 
+    box-shadow: 0 25px 50px -12px rgba(44, 62, 80, 0.25);
+    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Architectural top-right corner accent */
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #7B876D;
+    border-right: 2px solid #7B876D;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Clean, non-overlapping close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #7B876D;
+    background: #f2f5f2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close:hover {
+    background: #E5BA41;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+    VIEW BUTTON (CENTERED)
+========================= */
+
+#viewBtn {
+    border: none;
+    padding: 11px 22px;
+    background: #7B876D;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    /* Added to allow proper centering inside a text-align: center container */
+    display: inline-block; 
+    margin: 0 auto;
+}
+
+#viewBtn:hover {
+    background: #E5BA41;
+    transform: translateY(-2px);
 }

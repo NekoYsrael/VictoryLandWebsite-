@@ -34,10 +34,6 @@ function DropFunction() {
 }
 
 
-/* =========================
-   GLOBAL CLICK HANDLER (FIXED)
-   - fixes dropdown + modal conflict
-========================= */
 
 window.addEventListener("click", function (e) {
 
