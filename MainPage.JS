@@ -115,7 +115,7 @@ const searchDestinations = {
 };
 
 if (searchInput) {
-    searchInput.addEventListener("keydown", function(e) {
+    searchInput.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
             e.preventDefault();
             const searchTerm = searchInput.value.toLowerCase().trim();
