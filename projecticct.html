@@ -185,27 +185,9 @@
         }
 
         /* =========================
-            GLOBAL UNIVERSAL SEARCH & REDIRECT
+            GLOBAL UNIVERSAL SEARCH & REDIRECT (UPDATED)
         ========================= */
         const searchInput = document.getElementById("searchInput");
-
-        const searchDestinations = {
-            "icct": "projecticct.html",
-            "icct colleges": "projecticct.html",
-            "madrid": "projectmadrid.html",
-            "madrid residence": "projectmadrid.html",
-            "217": "project217.html",
-            "building 217": "project217.html",
-            "217 building": "project217.html",
-            "contact": "index.html#contact",
-            "contacts": "index.html#contact",
-            "contact us": "index.html#contact",
-            "about": "index.html#about",
-            "about us": "index.html#about",
-            "projects": "index.html#projects",
-            "home": "index.html#hero",
-            "hero": "index.html#hero"
-        };
 
         if (searchInput) {
             searchInput.addEventListener("keydown", function(e) {
@@ -213,10 +195,30 @@
                     e.preventDefault();
                     const searchTerm = searchInput.value.toLowerCase().trim();
 
-                    if (searchDestinations[searchTerm]) {
-                        window.location.href = searchDestinations[searchTerm];
-                    } else if (searchTerm !== "") {
-                        alert("Page or section not found!");
+                    if (searchTerm === "") return;
+
+                    // Flexible keyword matching
+                    if (searchTerm.includes("icct") || searchTerm.includes("cainta") || searchTerm.includes("cogeo") || searchTerm.includes("san mateo") || searchTerm.includes("angono") || searchTerm.includes("binangonan") || searchTerm.includes("antipolo")) {
+                        window.location.href = "projecticct.html";
+                    } else if (searchTerm.includes("madrid")) {
+                        window.location.href = "projectmadrid.html";
+                    } else if (searchTerm.includes("217")) {
+                        window.location.href = "project217.html";
+                    } else if (searchTerm.includes("contact")) {
+                        window.location.href = "index.html#contact";
+                    } else if (searchTerm.includes("about")) {
+                        window.location.href = "index.html#about";
+                    } else if (searchTerm.includes("project")) {
+                        window.location.href = "index.html#projects";
+                    } else if (searchTerm.includes("home")) {
+                        window.location.href = "index.html#hero";
+                    } else {
+                        // Cleaner UX fallback instead of an intrusive alert popup
+                        searchInput.value = "";
+                        searchInput.placeholder = "No results found. Try 'ICCT', 'Madrid', or 'Contact'";
+                        setTimeout(() => {
+                            searchInput.placeholder = "Search sections or projects & press Enter...";
+                        }, 3000);
                     }
                 }
             });
@@ -276,7 +278,6 @@
             }
         }
 
-       
         window.onclick = function (e) {
             const modal = document.getElementById("projectModal");
             if (e.target === modal) {
